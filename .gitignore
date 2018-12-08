@@ -62,3 +62,6 @@ typings/
 
 # Production directory
 dist
+
+# Editor
+.idea
