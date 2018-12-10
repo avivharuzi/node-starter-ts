@@ -5,7 +5,8 @@
   "main": "src/server.ts",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc --watch",
+    "watch": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
     "start": "npm run build && nodemon dist/server.js",
     "dev": "cross-env NODE_ENV=development concurrently \"npm:start\" \"npm:watch\"",
     "prod": "cross-env NODE_ENV=production npm run start"
