@@ -1,16 +1,11 @@
-import { config } from 'dotenv';
-config();
-
 import app from './app';
-import * as http from 'http';
+import * as dotenv from 'dotenv';
 
-const hostname: string = process.env.HOSTNAME || '127.0.0.1';
-const port: number = parseInt(process.env.PORT) || 3000;
+dotenv.config();
 
-app.set('port', port);
+const HOSTNAME: string = process.env.HOSTNAME || '127.0.0.1';
+const PORT: number = parseInt(process.env.PORT) || 3000;
 
-const server = http.createServer(app);
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}`);
+app.listen(PORT, HOSTNAME, () => {
+  console.log(`Server running at http://${HOSTNAME}:${PORT}`);
 });
