@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
+import * as compression from 'compression';
 
 class App {
   public express: express.Application;
@@ -10,6 +11,7 @@ class App {
   }
 
   private middleware() {
+    this.express.use(compression({ threshold: 0 }));
     this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({ extended: false }));
   }
