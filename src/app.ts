@@ -2,16 +2,26 @@ import * as bodyParser from 'body-parser';
 import * as compression from 'compression';
 import * as cookieParser from 'cookie-parser';
 import * as cors from 'cors';
+import * as dotenv from 'dotenv';
 import * as express from 'express';
 import * as expressFileUpload from 'express-fileupload';
 import * as helmet from 'helmet';
+import * as mongoose from 'mongoose';
 
 class App {
   public express: express.Application;
 
   public constructor() {
+    dotenv.config();
     this.express = express();
+    this.databaseConnection();
     this.middleware();
+  }
+
+  private databaseConnection(): void {
+    mongoose.connect(`mongodb://${process.env.DB_HOSTNAME}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`, { useNewUrlParser: true })
+      .then(() => console.log('Database connected successfully'))
+      .catch(error => console.log(error));
   }
 
   private middleware(): void {
