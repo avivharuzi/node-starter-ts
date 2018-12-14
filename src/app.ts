@@ -3,6 +3,7 @@ import * as compression from 'compression';
 import * as cookieParser from 'cookie-parser';
 import * as cors from 'cors';
 import * as express from 'express';
+import * as expressFileUpload from 'express-fileupload';
 import * as helmet from 'helmet';
 
 class App {
@@ -20,6 +21,7 @@ class App {
     this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({ extended: false }));
     this.express.use(cookieParser());
+    this.express.use(expressFileUpload());
   }
 }
 
