@@ -1,8 +1,9 @@
-import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import * as cookieParser from 'cookie-parser';
 import * as compression from 'compression';
+import * as cookieParser from 'cookie-parser';
 import * as cors from 'cors';
+import * as express from 'express';
+import * as helmet from 'helmet';
 
 class App {
   public express: express.Application;
@@ -12,8 +13,9 @@ class App {
     this.middleware();
   }
 
-  private middleware() {
+  private middleware(): void {
     this.express.use(compression({ threshold: 0 }));
+    this.express.use(helmet());
     this.express.use(cors());
     this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({ extended: false }));
