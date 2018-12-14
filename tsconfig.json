@@ -1,32 +1,32 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "allowJs": true,
+    "baseUrl": ".",
     "declaration": false,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "removeComments": true,
-    "noLib": false,
-    "strict": true,
-    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
-    "allowJs": true,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "forceConsistentCasingInFileNames": true,
     "lib": [
       "es2017"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noLib": false,
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6",
+    "typeRoots": [
+      "node_modules/@types"
     ]
   },
-  "include": [
-    "src/**/*.ts"
-  ],
   "exclude": [
     "node_modules"
+  ],
+  "include": [
+    "src/**/*.ts"
   ]
 }
