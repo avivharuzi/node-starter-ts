@@ -21,7 +21,7 @@ class App {
   private databaseConnection(): void {
     mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOSTNAME}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`, { useNewUrlParser: true })
       .then(() => console.log('Database connected successfully'))
-      .catch(error => console.log(error));
+      .catch(err => console.log(err));
   }
 
   private middleware(): void {
