@@ -26,6 +26,7 @@
     "@types/body-parser": "^1.17.0",
     "@types/compression": "0.0.36",
     "@types/cookie-parser": "^1.4.1",
+    "@types/cors": "^2.8.4",
     "@types/dotenv": "^6.1.0",
     "@types/express": "^4.16.0",
     "@types/joi": "^14.0.0",
@@ -44,6 +45,7 @@
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
     "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "joi": "^14.3.0"
