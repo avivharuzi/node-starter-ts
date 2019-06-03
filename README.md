@@ -1,2 +1,3 @@
-# node-starter-ts
-node.js starter files with typescript
+# Node Starter TS
+
+Node.js starter files project with TypeScript.
