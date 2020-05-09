@@ -13,7 +13,7 @@
     "lib": [
       "ESNext"
     ],
-    "module": "ESNext",
+    "module": "CommonJS",
     "outDir": "./dist",
     "removeComments": true,
     "sourceMap": true,
