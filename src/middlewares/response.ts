@@ -1,5 +1,4 @@
 import * as chalk from 'chalk';
-// @ts-ignore
 import * as httpMethods from 'http-methods-constants';
 import * as httpStatusCodes from 'http-status-codes';
 import { Request, Response, NextFunction } from 'express';
