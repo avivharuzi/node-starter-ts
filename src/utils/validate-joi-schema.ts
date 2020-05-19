@@ -3,7 +3,7 @@ import * as Joi from 'joi';
 import errors from '../errors';
 import { ResponseError } from '../modules/Shared/ResponseError';
 
-export default (value: any, schema: Joi.ObjectSchema): any => {
+export default <T>(value: T, schema: Joi.ObjectSchema): T => {
   try {
     const result = Joi.validate(value, schema, {
       abortEarly: false,

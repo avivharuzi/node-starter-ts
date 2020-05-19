@@ -16,6 +16,18 @@ Watch project files.
 npm run watch
 ```
 
+Lint project files.
+
+```bash
+npm run lint
+```
+
+Lint and Fix project files.
+
+```bash
+npm run lint-and-fix
+```
+
 Start development server.
 
 ```bash

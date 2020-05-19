@@ -8,6 +8,7 @@ import errors from './../errors';
 import { ResponseError } from '../modules/Shared/ResponseError';
 
 export default () => (req: Request, res: Response, next: NextFunction): void => {
+  // eslint-disable-next-line
   res.locals.success = (data: any): void => {
     let statusCode: number;
 
@@ -33,6 +34,7 @@ export default () => (req: Request, res: Response, next: NextFunction): void => 
     res.send(data);
   };
 
+  // eslint-disable-next-line
   res.locals.error = (err: any): void => {
     if (!config.server.isProduction) {
       console.log(chalk.red(`Error occurred in request process, err: ${JSON.stringify(err)}`));
