@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+  node-starter-ts:
+    command: npm run start:prod
+    environment:
+      - NODE_ENV=production

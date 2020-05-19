@@ -2,7 +2,7 @@
 
 Node.js starter files project with TypeScript.
 
-## Commands
+## NPM Commands
 
 Build project files.
 
@@ -26,4 +26,18 @@ Start production server.
 
 ```bash
 npm run start:prod
+```
+
+## Docker Commands
+
+Development build.
+
+```bash
+docker-compose up -d
+```
+
+Production build.
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 ```

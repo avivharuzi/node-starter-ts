@@ -4,9 +4,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "start": "npm run build && nodemon dist/main.js",
-    "start:dev": "cross-env NODE_ENV=development concurrently \"npm:start\" \"npm:watch\"",
-    "start:prod": "cross-env NODE_ENV=production npm run start"
+    "start:dev": "cross-env NODE_ENV=development npm run build && concurrently \"npm:watch\" \"nodemon dist/main.js\"",
+    "start:prod": "cross-env NODE_ENV=production npm run build && node dist/main.js"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  node-starter-ts:
+    container_name: node-starter-ts
+    restart: always
+    init: true
+    build: ./
+    ports:
+      - ${SERVER_PORT:-8080}:${SERVER_PORT:-8080}
+    env_file:
+      - ./.env
