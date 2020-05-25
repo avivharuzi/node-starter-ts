@@ -28,6 +28,18 @@ Lint and Fix project files.
 npm run lint-and-fix
 ```
 
+Run test.
+
+```bash
+npm test
+```
+
+Run test coverage.
+
+```bash
+npm run coverage
+```
+
 Start development server.
 
 ```bash
