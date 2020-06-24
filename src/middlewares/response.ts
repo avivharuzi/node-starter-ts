@@ -5,7 +5,7 @@ import { Request, Response, NextFunction } from 'express';
 
 import config from './../config';
 import errors from './../errors';
-import { ResponseError } from '@/modules/Shared/ResponseError';
+import { ResponseError } from '../modules/Shared/ResponseError';
 
 export default () => (req: Request, res: Response, next: NextFunction): void => {
   // eslint-disable-next-line
