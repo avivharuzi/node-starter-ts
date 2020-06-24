@@ -1,4 +1,4 @@
-FROM node:12.16.3
+FROM node:12.18.1
 
 ARG SERVER_PORT
 
