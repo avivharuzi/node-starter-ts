@@ -1,7 +1,7 @@
 import * as Joi from 'joi';
 
 import errors from '../errors';
-import { ResponseError } from '../modules/Shared/ResponseError';
+import { ResponseError } from '@/modules/Shared/ResponseError';
 
 export default <T>(value: T, schema: Joi.ObjectSchema): T => {
   try {
@@ -11,6 +11,7 @@ export default <T>(value: T, schema: Joi.ObjectSchema): T => {
     });
 
     if (result.error) {
+      // noinspection ExceptionCaughtLocallyJS
       throw result.error;
     }
 
