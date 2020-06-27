@@ -28,6 +28,12 @@ Lint and Fix project files.
 npm run lint-and-fix
 ```
 
+Format project files.
+
+```bash
+npm run format
+```
+
 Run test.
 
 ```bash

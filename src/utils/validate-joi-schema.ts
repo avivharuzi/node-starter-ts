@@ -11,6 +11,7 @@ export default <T>(value: T, schema: Joi.ObjectSchema): T => {
     });
 
     if (result.error) {
+      // noinspection ExceptionCaughtLocallyJS
       throw result.error;
     }
 
@@ -18,4 +19,4 @@ export default <T>(value: T, schema: Joi.ObjectSchema): T => {
   } catch (err) {
     throw new ResponseError(errors.validation, err);
   }
-}
+};
