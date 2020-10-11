@@ -9,7 +9,8 @@
     "format": "prettier --write \"**/*.ts\"",
     "test": "jest",
     "coverage": "jest --coverage",
-    "start:dev": "cross-env NODE_ENV=development npm run build && concurrently \"npm:watch\" \"nodemon dist/main.js\"",
+    "start": "ts-node ./src/main.ts",
+    "start:dev": "cross-env NODE_ENV=development nodemon -w ./src --ext \".ts\" --exec npm start",
     "start:prod": "cross-env NODE_ENV=production npm run build && node dist/main.js"
   },
   "private": true,
@@ -43,7 +44,6 @@
     "@types/node": "^13.13.19",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
-    "concurrently": "^5.3.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
     "eslint-config-prettier": "^6.11.0",
