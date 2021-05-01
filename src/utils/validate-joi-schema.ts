@@ -5,7 +5,7 @@ import { ResponseError } from '../modules/Shared/ResponseError';
 
 export default <T>(value: T, schema: Joi.ObjectSchema): T => {
   try {
-    const result = Joi.validate(value, schema, {
+    const result = schema.validate(value, {
       abortEarly: false,
       stripUnknown: true,
     });
