@@ -22,10 +22,10 @@ Lint project files.
 npm run lint
 ```
 
-Lint and Fix project files.
+Lint and fix project files.
 
 ```bash
-npm run lint-and-fix
+npm run lint:fix
 ```
 
 Format project files.
