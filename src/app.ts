@@ -1,39 +1,15 @@
-import * as bodyParser from 'body-parser';
 import * as chalk from 'chalk';
-import * as compression from 'compression';
-import * as cors from 'cors';
 import * as express from 'express';
-import * as helmet from 'helmet';
-import * as methodOverride from 'method-override';
-import * as morgan from 'morgan';
 
-import config from './config';
-import middlewares from './middlewares';
-import routes from './routes';
+import { afterMiddlewares, beforeMiddlewares } from './middlewares';
+import { routes } from './routes';
 
-async function start(port: number, hostname: string): Promise<void> {
+export const start = async (port: number, hostname: string): Promise<void> => {
   const app = express();
-
-  app.use(cors());
-  app.use(helmet());
-  app.use(methodOverride());
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(compression({ threshold: 0 }));
-
-  if (!config.server.isProduction) {
-    app.use(morgan('dev')); // Log requests on development.
-  }
-
-  app.use(middlewares.response()); // res.locals.success, res.locals.error
-
-  await routes(app); // Configure all our application routes.
-
+  await beforeMiddlewares(app);
+  await routes(app);
+  await afterMiddlewares(app);
   app.listen(port, hostname, (): void => {
     console.log(chalk.blue(`Server running at: http://${hostname}:${port}`));
   });
-}
-
-export default {
-  start,
 };
