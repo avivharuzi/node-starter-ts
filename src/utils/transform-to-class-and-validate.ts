@@ -4,7 +4,7 @@ import { validateOrReject } from 'class-validator';
 
 import { BadRequest } from '../errors/bad-request';
 
-export const transformToClassAndValidate = async <T, V>(
+export const transformToClassAndValidate = async <T, V = object>(
   clsConstructor: ClassConstructor<T>,
   plainObj: V
 ): Promise<T> => {
