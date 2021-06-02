@@ -11,7 +11,7 @@ export const transformToClassAndValidate = async <T, V = object>(
   try {
     const cls: T = plainToClass(clsConstructor, plainObj);
     // @ts-ignore
-    await validateOrReject(cls);
+    await validateOrReject(cls, { forbidUnknownValues: true });
     return cls;
   } catch (errors) {
     throw new BadRequest(undefined, errors);
