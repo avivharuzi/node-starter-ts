@@ -9,5 +9,6 @@ export class InternalServerError extends HttpError {
       StatusCodes.INTERNAL_SERVER_ERROR,
       message ?? defaultErrorMessages.internalServerError
     );
+    Object.setPrototypeOf(this, InternalServerError.prototype);
   }
 }

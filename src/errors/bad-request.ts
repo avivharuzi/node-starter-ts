@@ -10,5 +10,6 @@ export class BadRequest extends HttpError {
       message ?? defaultErrorMessages.badRequest,
       errors
     );
+    Object.setPrototypeOf(this, BadRequest.prototype);
   }
 }
